@@ -10,13 +10,13 @@
 				<div class="hidden md:block">
 					<div class="ml-10 flex flex-grow items-center justify-end">
 						<nav class="text-gray-300 flex items-center">
-							<nuxt-link
-								v-for="page in pages" :key="page.link.id" :to="page.link.url"
+							<prismic-link :field="page.link"
+								v-for="page in pages" :key="page.link.id"
 								class="mr-4 px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"
 								active-class="active text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700"
 							>
 								{{ $prismic.asText(page.label) }}
-							</nuxt-link>
+							</prismic-link>
 						</nav>
 					</div>
 				</div>
@@ -96,10 +96,10 @@
 		</div>
 		<div :class="{ 'block': navigationVisible, 'sm:hidden': !navigationVisible }">
 			<div class="mx-2 px-2 pt-2 pb-3 sm:px-3  text-gray-300">
-				<router-link
+				<prismic-link :field="page.link"
+								v-for="page in pages" :key="page.link.id"
 					class="mt-1 block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"
-					v-for="page in pages" :key="page.link.id" :to="page.link.url"
-				>{{ $prismic.asText(page.label) }}</router-link>
+				>{{ $prismic.asText(page.label) }}</prismic-link>
 			</div>
 			<div class="pt-4 pb-3 border-t border-gray-700" v-if="false">
 				<div class="flex items-center px-5">
