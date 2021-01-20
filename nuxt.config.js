@@ -28,6 +28,7 @@ export default {
       "src": "https://cdn.jsdelivr.net/npm/focus-visible@5.0.2/dist/focus-visible.min.js"
     }]
   },
+  dev: process.env.NODE_ENV !== 'production',
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["vue-essential-slices/src/styles/styles.scss", "@/assets/scss/main.scss"],
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
